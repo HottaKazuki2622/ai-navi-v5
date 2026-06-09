@@ -38,7 +38,7 @@ export default function InputForm({ onSubmit, isLoading }: Props) {
           required
           rows={3}
           placeholder="例: タスク管理アプリ。ユーザーがタスクを追加・完了・削除できる Web アプリ"
-          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none resize-none transition"
+          className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none resize-none transition"
         />
       </div>
 
@@ -52,7 +52,7 @@ export default function InputForm({ onSubmit, isLoading }: Props) {
           onChange={handleChange}
           rows={2}
           placeholder="例: Next.js (App Router) + TypeScript + Tailwind CSS + Supabase"
-          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none resize-none transition"
+          className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none resize-none transition"
         />
       </div>
 
@@ -66,7 +66,7 @@ export default function InputForm({ onSubmit, isLoading }: Props) {
           onChange={handleChange}
           rows={2}
           placeholder="例: ログイン機能まで完成。次はタスクの CRUD を実装したい"
-          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none resize-none transition"
+          className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none resize-none transition"
         />
       </div>
 
