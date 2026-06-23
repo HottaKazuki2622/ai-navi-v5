@@ -53,7 +53,8 @@ function inferSteps(input: GenerateInput): string[] {
 
   // 認証
   if (includes(text, ["auth", "login", "ログイン", "認証", "supabase"])) {
-    if (!includes(input.currentSituation, ["ログイン機能まで完成", "auth完成", "認証済み"])) {
+    const allFields = `${input.whatToBuild} ${input.techStack} ${input.currentSituation}`;
+    if (!includes(allFields, ["ログイン機能まで完成", "auth完成", "認証済み"])) {
       steps.push("認証機能（サインアップ・ログイン）の実装");
     }
   }
@@ -125,7 +126,7 @@ function inferWarnings(input: GenerateInput): string[] {
   }
 
   // TypeScript
-  if (includes(text, ["typescript", "ts", ".tsx"])) {
+  if (includes(text, ["typescript", ".ts", ".tsx"])) {
     warnings.push(
       "`any` 型の多用は避け、インターフェースや型エイリアスで型を明示してください。"
     );

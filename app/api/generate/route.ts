@@ -4,14 +4,19 @@ import { generate, GenerateInput } from "@/lib/generator";
 export async function POST(req: NextRequest) {
   const body = await req.json().catch(() => null);
 
-  if (!body || typeof body.whatToBuild !== "string") {
+  if (
+    !body ||
+    typeof body.whatToBuild !== "string" ||
+    (body.techStack !== undefined && typeof body.techStack !== "string") ||
+    (body.currentSituation !== undefined && typeof body.currentSituation !== "string")
+  ) {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
   }
 
   const input: GenerateInput = {
-    whatToBuild: body.whatToBuild?.trim() ?? "",
-    techStack: body.techStack?.trim() ?? "",
-    currentSituation: body.currentSituation?.trim() ?? "",
+    whatToBuild: body.whatToBuild.trim(),
+    techStack: body.techStack ? body.techStack.trim() : "",
+    currentSituation: body.currentSituation ? body.currentSituation.trim() : "",
   };
 
   if (!input.whatToBuild) {
